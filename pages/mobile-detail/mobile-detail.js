@@ -1,14 +1,14 @@
 (function () {
 
-    (function () {
-        let user = JSON.parse(localStorage.getItem('user'));
-        if (user) {
-            return
-        }
-        else {
-            location = './../signin-signup/signin.html'
-        }
-    })()
+    // (function () {
+    //     let user = JSON.parse(localStorage.getItem('user'));
+    //     if (user) {
+    //         return
+    //     }
+    //     else {
+    //         location = './../signin-signup/signin.html'
+    //     }
+    // })()
 
     //get query params from link and get mobile item from firebase database
     let params = new URLSearchParams(location.search)

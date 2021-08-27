@@ -1,14 +1,14 @@
 (function () {
 
-    (function () {
-        let user = JSON.parse(localStorage.getItem('user'));
-        if (user) {
-            return
-        }
-        else {
-            location = './pages/signin-signup/signin.html'
-        }
-    })()
+    // (function () {
+    //     let user = JSON.parse(localStorage.getItem('user'));
+    //     if (user) {
+    //         return
+    //     }
+    //     else {
+    //         location = './pages/signin-signup/signin.html'
+    //     }
+    // })()
 
     
     _db.child('mobiles').on('value', (snap) => {

@@ -5,11 +5,11 @@ let __mobileDataArray;
 
     // get user from localstorage then route
     let user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-    }
-    else {
-      location = './../signin-signup/signin.html'
-    }
+    // if (user) {
+    // }
+    // else {
+    //   location = './../signin-signup/signin.html'
+    // }
 
     _db.child('mobiles').on('value', (snap) => {
 
