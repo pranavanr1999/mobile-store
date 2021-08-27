@@ -705,3 +705,79 @@ input[type="number"]::-webkit-outer-spin-button {
 .display-components .user-list:nth-child(2) {
   margin-top: 2rem;
 }
+
+/* Payment */
+
+.paymentdetails {
+  width: 90%;
+  height: 30px;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.payment {
+  width: 90%;
+  height: 90px;
+  background-color: rgb(224, 224, 226);
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.cvv {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+
+  padding-left: 10px;
+  max-width: 200px;
+  width: 30%;
+}
+
+#div1 {
+  visibility: hidden;
+}
+
+#payment {
+  visibility: hidden;
+  align-items: center;
+  margin-left: 55px;
+}
+
+.acc-no {
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 15px;
+}
+.exp-date {
+  width: 30%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 15px;
+  margin: 10px;
+}
+.cvv-input {
+  width: 30%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 15px;
+  margin: 10px;
+}
+
+.btn {
+  width: 60%;
+  height: 50px;
+  background-color: hotpink;
+}
+
+#div2 {
+  visibility: hidden;
+  cursor: pointer;
+}

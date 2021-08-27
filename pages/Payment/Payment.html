@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="./../../css/style.css" />
   <link rel="preload" as="style" href="./../../assets/mobirise/css/mbr-additional.css" />
   <link rel="stylesheet" href="./../../assets/mobirise/css/mbr-additional.css" type="text/css" />
+  <link rel="stylesheet" href="../..//css/style.css">
 
   <!-- load firebase web sdk -->
   <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
@@ -120,23 +121,17 @@
           <div class="display-block" id="add-class1">
             <div class="search">
               <div class="search-box" id="f">
-                <h5>Order</h5>
+                <h5>Order-Payment</h5>
               </div>
             </div>
             <div class="display-components">
               <div class="user-list">
                 <div class="user-heading">
-                  Order-Place-Details:
+                  Order-Payment-Details:
                 </div>
-                <div class="user-table">
-                  <form>
-                    <div class="form-group row">
-                      <label for="staticEmail" class="col-sm-2 col-form-label">Name:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext" id="staticEmail" required
-                          placeholder="Enter Name">
-                      </div>
-                    </div>
+                <div class="user-table" style="align-items: center;">
+                  <form style="align-items: center;">
+                   
 
                     <!-- <div class="form-group row">
                                               <label for="inputPassword" class="col-sm-2 col-form-label">Email:</label>
@@ -145,58 +140,57 @@
                                               </div>
                                             </div> -->
 
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">Flat No:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext" id="staticEmail" required
-                          placeholder="Enter Flat No">
+                    
+                    <div class="form-group ">
+                      <label for="gender" class="col-md-2 control-label" style="font-size: large;">Payment Method:</label>
+                      <div class="col-set">
+                        <div class="radio1">
+                          <label onclick="fn4()"><input type="radio" name="gender" value="0" onclick="fn_check(this)"> :Cash on
+                            Delivery</label>
+                        </div>
+                        <div class="radio1">
+                          <label onclick="fn3()"><input type="radio" name="gender" value="1" onclick="fn_check(this)"> :Online
+                            Card</label>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">Locality:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext" id="staticEmail" required
-                          placeholder=" Locality">
-                      </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">City:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext staticEmail1" id="staticEmail" required
-                          placeholder=" City">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">LandMark :</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext staticEmail1" id="staticEmail" required
-                          placeholder="Landmark">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">State :</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext staticEmail1" id="staticEmail" required
-                          placeholder="State">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label">PIN :</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control-plaintext staticEmail1" id="staticEmail" required
-                          placeholder="PIN Code">
-                      </div>
+                    <div id="payment" class="paymentmethods">
+                        <div class="payment" onclick="fn2()">
+                            <div class="paymentdetails" onclick="fn2()">
+                                <h3 style="color: rgb(117, 115, 115); margin-top: 40px; cursor: pointer;" onclick="fn2()">Federal Bank - 4463</h3>
+                            </div>
+                            <div id="div1"  class="cvvcontainer">
+                                <input id="cvv" placeholder="CVV" class="cvv" width="200px" height="45px" style="margin-left: 50%;"/>
+                            </div>
+                        </div>
+    
+                       <div id="cnt" class="add-payment" style="width: 90%; margin-left: 10px; padding-top: 15px; border-radius:15px; height: 90px; background-color:whitesmoke">
+                           <h3 style="cursor: pointer;" onclick="fn4()">Add Debit Card</h3>
+                           <div id="div2" style="align-items: center; padding-top: 10px;">
+                            <input type="text" placeholder="Card Number" class="acc-no">
+                            <div class=" main-row" style="align-items: center;">
+                             <input type="text" placeholder="Exp" class="exp-date">
+                             <input type="text" class="cvv-input" placeholder="CVV">
+                            </div>
+                            <a href="#" class="btn btn-block" style="width: 60%; margin-top: 20px;" id="btn-color">Add </a>
+                           </div>
+                           
+                       </div>
+    
+                        
                     </div>
 
+                   
                     
-                    </div>
+                    
+
+                   
 
                   </form>
                 </div>
                 <div class="btn-heading">
-                  <a href="../Payment/Payment.html" class="btn btn-block" style="width:200px;" id="btn-color">Order Now</a>
+                  <a href="#" class="btn btn-block" style="width: 80%; margin-left: 100px;" id="btn-color" >Pay Now</a>
                 </div>
               </div>
             </div>
@@ -268,17 +262,80 @@
 
     function fn_check(check) {
       let value = check.value;
+      var py = document.getElementById("payment");
       document.querySelector(".staticEmail1").value = "";
       if (value == 1) {
         console.log(value);
         document.querySelector(".staticEmail1").disabled = false;
+        py.style.visibility = "visible";
       }
       else {
         console.log(value);
         document.querySelector(".staticEmail1").disabled = true;
+        py.style.visibility = "hidden";
+
       }
 
     }
+
+
+    function fn_1(check) {
+        let value = check.value;
+        document.querySelector(".staticEmail1").value = "";
+        if (value == 1) {
+          console.log(value);
+            cvv.style.visibility = "visible";
+            console.log(cvv.style.visibility);
+        }
+        else {
+          console.log(value);
+          document.querySelector(".staticEmail1").disabled = true;
+          cvv.style.visibility = "hidden";
+          console.log(cvv.style.visibility);
+
+        }
+  
+      }
+
+      function fn2(){
+        var cvv = document.getElementById("div1");
+
+          if(cvv.style.visibility == "hidden"){
+              cvv.style.visibility = "visible";
+              console.log(cvv.style.visibility);
+          }
+          else{
+              cvv.style.visibility = "hidden";
+              console.log(cvv.style.visibility);
+          }
+      }
+
+      var py = document.getElementById("payment");
+
+
+      function fn3(){
+
+        py.style.visibility = "visible";
+      }
+      function fn4(){
+
+        py.style.visibility = "hidden";
+      }
+
+     function fn4(){
+        var div2 = document.getElementById("div2");
+        var cnt = document.getElementById("cnt")
+        if(div2.style.visibility == "hidden"){
+            div2.style.visibility = "visible";
+            console.log(div2.style.visibility);
+            cnt.style.height = "350px";
+        }
+        else{
+            div2.style.visibility = "hidden";
+            console.log(div2.style.visibility);
+            cnt.style.height = "90px";
+        }
+      }
   </script>
 
 <script src="./checkout.js"></script>
